@@ -37,4 +37,49 @@ public class UGUIEventListener : UnityEngine.EventSystems.EventTrigger
     {
         if (onClick != null) onClick(gameObject, eventData);
     }
+
+    public override void OnPointerEnter(PointerEventData eventData)
+    {
+        if (onEnter != null) onEnter(gameObject, eventData);
+    }
+
+    public override void OnPointerDown(PointerEventData eventData)
+    {
+        if (onDown != null) onDown(gameObject, eventData);
+    }
+
+    public override void OnPointerUp(PointerEventData eventData)
+    {
+        if (onUp != null) onUp(gameObject, eventData);
+    }
+
+    public override void OnPointerExit(PointerEventData eventData)
+    {
+        if (onExit != null) onExit(gameObject, eventData);
+    }
+
+    public override void OnBeginDrag(PointerEventData eventData)
+    {
+        if (onBeginDrag != null) onBeginDrag(gameObject, eventData);
+    }
+
+    public override void OnDrag(PointerEventData eventData)
+    {
+        if (onDrag != null) onDrag(gameObject, eventData);
+    }
+
+    public override void OnEndDrag(PointerEventData eventData)
+    {
+        if (onEndDrag != null) onEndDrag(gameObject, eventData);
+    }
+
+    public override void OnDrop(PointerEventData eventData)
+    {
+        if (onDrop != null) onDrop(gameObject, eventData);
+    }
+
+    public override void OnScroll(PointerEventData eventData)
+    {
+        if (onScroll != null) onScroll(gameObject, eventData);
+    }
 }
