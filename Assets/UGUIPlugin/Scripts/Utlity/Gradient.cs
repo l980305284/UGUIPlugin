@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 /*
  * @author 戴佳霖
- * 
+ * 文字渐变效果
  */
 
 [AddComponentMenu("UI/Effects/Gradient")]
