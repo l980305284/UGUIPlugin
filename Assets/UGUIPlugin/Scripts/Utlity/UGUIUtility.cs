@@ -7,11 +7,68 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class UGUIUtility : MonoBehaviour
+public static class UGUIUtility
 {
-	public static Sprite LoadSprite(string tag, string spriteName)
+	public static void LoadSprite(this Image image, string tag, string spriteName)
     {
-        return Resources.Load<GameObject>(UGUIConfig.SpriteRes + tag + "/" + spriteName).GetComponent<SpriteRenderer>().sprite;
+        image.sprite = Resources.Load<GameObject>(UGUIConfig.SpriteRes + tag + "/" + spriteName).GetComponent<SpriteRenderer>().sprite;
     }
+
+    public static int GetDepth(this Image image)
+    {
+        CanvasRenderer render = image.gameObject.GetComponent<CanvasRenderer>();
+        return render.absoluteDepth;
+    }
+
+    public static void SetDepth(this Image image, int depth)
+    {
+        image.transform.SetSiblingIndex(depth);
+    }
+
+    public static int GetDepth(this Text text)
+    {
+        CanvasRenderer render = text.gameObject.GetComponent<CanvasRenderer>();
+        return render.absoluteDepth;
+    }
+
+    public static void SetDepth(this Text text, int depth)
+    {
+        text.transform.SetSiblingIndex(depth);
+    }
+
+    /// <summary>判断是否点击在UI上</summary>
+    public static bool IsClickUI()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Check if the mouse was clicked over a UI element
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
+                return false;
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public static T FindInParents<T>(GameObject go) where T : Component
+    {
+        if (go == null) return null;
+        var comp = go.GetComponent<T>();
+
+        if (comp != null)
+            return comp;
+
+        var t = go.transform.parent;
+        while (t != null && comp == null)
+        {
+            comp = t.gameObject.GetComponent<T>();
+            t = t.parent;
+        }
+        return comp;
+    }
+
 }
