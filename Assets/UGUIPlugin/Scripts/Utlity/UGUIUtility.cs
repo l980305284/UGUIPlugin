@@ -71,4 +71,9 @@ public static class UGUIUtility
         return comp;
     }
 
+    public static int SortHorizontal(RectTransform a, RectTransform b) { return a.localPosition.x.CompareTo(b.localPosition.x); }
+
+    public static int SortVertical(RectTransform a, RectTransform b) { return b.localPosition.y.CompareTo(a.localPosition.y); }
+
+    public static int SortByName(RectTransform a, RectTransform b) { return string.Compare(a.name, b.name); }
 }
