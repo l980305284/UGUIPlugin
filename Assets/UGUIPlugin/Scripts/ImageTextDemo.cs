@@ -63,9 +63,9 @@ public class ImageTextDemo : MonoBehaviour {
     {
         int index = int.Parse(icon.sprite.name);
         index++;
-        if (index > 1024)
+        if (index > 15)
         {
-            index = 1001;
+            index = 1;
         }
         icon.LoadSprite("HeroIcon", index.ToString());
     }
