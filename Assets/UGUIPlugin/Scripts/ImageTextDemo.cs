@@ -63,7 +63,7 @@ public class ImageTextDemo : MonoBehaviour {
     {
         int index = int.Parse(icon.sprite.name);
         index++;
-        if (index > 15)
+        if (index > 14)
         {
             index = 1;
         }
