@@ -13,19 +13,21 @@ public class ScrollViewDemo : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 99; i++)
         {
             testList.Add(i);
         }
 
-        LoopScrollView quick = GetComponent<LoopScrollView>();
-        quick.Data(testList);
+        LoopScrollView loopScrollView = GetComponent<LoopScrollView>();
+        loopScrollView.SetData(testList);
+        loopScrollView.OnItemClick = OnItemClick;
+        loopScrollView.MoveToIndex(72);
     }
 
-    private void UpdateItem(Transform item, int index)
+
+    private void OnItemClick(LoopBaseNode node)
     {
-        item.name = index.ToString();
-        Debug.Log(item.localPosition + " " + item.position);
+        Debug.Log(node.data);
     }
 
 }
