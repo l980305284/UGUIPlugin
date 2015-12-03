@@ -12,12 +12,26 @@ using UnityEngine.EventSystems;
 
 public class BackMainScene : MonoBehaviour {
 
-    public GameObject m_btn;
+    static string path = "BackMainBtn";
+
+    public static BackMainScene instance;
+
+    static BackMainScene()
+	{
+        GameObject prefab = Resources.Load(path) as GameObject;
+        GameObject go = GameObject.Instantiate(prefab);
+		DontDestroyOnLoad(go);
+        instance = go.AddComponent<BackMainScene>();
+	}
+
+    public void Init()
+    {
+
+    }
 
 	// Use this for initialization
 	void Start () {
-        DontDestroyOnLoad(gameObject);
-        UGUIEventListener listener = UGUIEventListener.Get(m_btn);
+        UGUIEventListener listener = UGUIEventListener.Get(transform.Find("Button").gameObject);
         listener.onClick = BackMainSceneOnClick;
 	}
 	

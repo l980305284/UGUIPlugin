@@ -12,6 +12,11 @@ using UnityEngine.EventSystems;
 
 public class StartDemo : MonoBehaviour {
 
+    void Awake()
+    {
+        BackMainScene.instance.Init();
+    }
+
 	// Use this for initialization
 	void Start () {
         UGUIEventListener[] listeners = gameObject.GetComponentsInChildren<UGUIEventListener>(true);
