@@ -14,7 +14,7 @@ public static class UGUIUtility
 {
 	public static void LoadSprite(this Image image, string tag, string spriteName)
     {
-        image.sprite = Resources.Load<GameObject>(UGUIConfig.SpriteRes + tag + "/" + spriteName).GetComponent<SpriteRenderer>().sprite;
+        image.sprite = Resources.Load<AtlasData>(UGUIConfig.SpriteRes + tag + "/" + tag).GetSpriteByName(spriteName);
     }
 
     public static int GetDepth(this Image image)

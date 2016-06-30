@@ -6,7 +6,6 @@ D:\UGUIPlugin\Temp\bin\Debug\DOTween46.dll
 D:\UGUIPlugin\Temp\bin\Debug\DOTween50.dll
 D:\UGUIPlugin\Temp\bin\Debug\Mono.Cecil.dll
 D:\UGUIPlugin\Temp\bin\Debug\UnityEditor.dll
-D:\UGUIPlugin\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
 D:\UGUIPlugin\Temp\bin\Debug\UnityEngine.dll
 D:\UGUIPlugin\Temp\bin\Debug\UnityEngine.Networking.dll
 D:\UGUIPlugin\Temp\bin\Debug\UnityEngine.UI.dll
