@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7a8009710f1aa9a4292b2a73283b2d0d
-timeCreated: 1467269381
+timeCreated: 1473065345
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName: {}
@@ -46,9 +46,11 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites: []
     outline: []
   spritePackingTag: HeroIcon

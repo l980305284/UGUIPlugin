@@ -2,7 +2,7 @@
  * 作者: 刘靖
  * 创建时间：2016.n.n
  * 版本：1.0.0
- * 描述：自定义打包的工具类
+ * 描述：自定义打包的工具类,打包Tag编写方式[TIGHT]HeroIcon_RGBA32_1024x1024
  ****************************************************/
 
 using System;
@@ -77,7 +77,6 @@ public class PackerPolicyByLiuJing : IPackerPolicy
 
                 entries.Add(entry);
             }
-
             Resources.UnloadAsset(ti);
         }
 
@@ -121,7 +120,7 @@ public class PackerPolicyByLiuJing : IPackerPolicy
         string[] names = name.Split(SignPrefix);
         if (IsTagPrefixed(names[0]))
             name = names[0].Substring(TagPrefix.Length).Trim();
-        return (names[0].Length == 0) ? "(unnamed)" : names[0];
+        return (name.Length == 0) ? "(unnamed)" : name;
     }
 
     private int ParseTextureWidth(string packingTag)
@@ -160,7 +159,7 @@ public class PackerPolicyByLiuJing : IPackerPolicy
         string[] names = name.Split(SignPrefix);
         if (names.Length >= 2)
         {
-            return (CustomTextureFormat)Enum.Parse(typeof(CustomTextureFormat), names[1]);         
+            return (CustomTextureFormat)Enum.Parse(typeof(CustomTextureFormat), names[1]);
         }
         else
         {

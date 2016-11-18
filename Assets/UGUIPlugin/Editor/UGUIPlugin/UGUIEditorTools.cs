@@ -67,9 +67,7 @@ public class UGUIEditorTools : Editor
                 Debug.LogError("文件夹下没有png文件!");
                 return;
             }
-
-            
-        } 
+        }
     }
 
     /// <summary>查找图集方法</summary>
